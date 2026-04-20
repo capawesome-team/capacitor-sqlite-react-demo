@@ -2,7 +2,9 @@
 
 A tutorial-first CRUD app for expenses built with React, Ionic, Capacitor, and SQLite.
 
-- [We also have a Angular version](https://github.com/capawesome-team/capacitor-sqlite-angular-demo)
+- [We also have an Angular version](https://github.com/capawesome-team/capacitor-sqlite-angular-demo)
+- [Step by step video tutorial](https://youtu.be/JJg2r1UIxlk)
+
 
 
 ## What this app includes
