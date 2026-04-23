@@ -14,6 +14,8 @@ A simple CRUD expenses app built with React, Ionic, Capacitor, and SQLite. Sourc
 - Database connection lifecycle management
 - Web support via `@sqlite.org/sqlite-wasm`
 
+[Check the demo](https://www.youtube.com/shorts/fL4NMJTvMlw)
+
 ## Built with
 
 - React 18
