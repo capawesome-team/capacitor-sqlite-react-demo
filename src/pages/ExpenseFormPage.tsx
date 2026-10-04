@@ -23,7 +23,7 @@ import {
   IonToolbar,
   useIonViewWillEnter,
 } from '@ionic/react';
-import { useHistory, useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import type {
   CreateExpenseInput,
   UpdateExpenseInput,
@@ -76,7 +76,7 @@ const DEFAULT_FORM_ERRORS: ExpenseFormErrors = {
 };
 
 export function ExpenseFormPage(): JSX.Element {
-  const history = useHistory();
+  const navigate = useNavigate();
   const { id } = useParams<{ id?: string }>();
   const [formState, setFormState] = useState<ExpenseFormState>(DEFAULT_FORM_STATE);
   const [fieldErrors, setFieldErrors] = useState<ExpenseFormErrors>(DEFAULT_FORM_ERRORS);
@@ -186,7 +186,7 @@ export function ExpenseFormPage(): JSX.Element {
   };
 
   const navigateToExpenses = (): void => {
-    history.push('/expenses');
+    navigate('/expenses');
   };
 
   const submitForm = async (event: FormEvent<HTMLFormElement>): Promise<void> => {

@@ -7,7 +7,7 @@ import {
   IonSpinner,
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import { Redirect, Route } from 'react-router-dom';
+import { Navigate, Route } from 'react-router-dom';
 import { ExpenseFormPage } from './pages/ExpenseFormPage';
 import { ExpenseListPage } from './pages/ExpenseListPage';
 import { databaseService } from './services/database';
@@ -63,13 +63,11 @@ export default function App(): JSX.Element {
     <IonApp>
       <IonReactRouter>
         <IonRouterOutlet>
-          <Route exact path="/expenses" component={ExpenseListPage} />
-          <Route exact path="/expenses/new" component={ExpenseFormPage} />
-          <Route exact path="/expenses/:id/edit" component={ExpenseFormPage} />
-          <Route exact path="/">
-            <Redirect to="/expenses" />
-          </Route>
-          <Route render={() => <Redirect to="/expenses" />} />
+          <Route path="/expenses" element={<ExpenseListPage />} />
+          <Route path="/expenses/new" element={<ExpenseFormPage />} />
+          <Route path="/expenses/:id/edit" element={<ExpenseFormPage />} />
+          <Route path="/" element={<Navigate to="/expenses" replace />} />
+          <Route path="*" element={<Navigate to="/expenses" replace />} />
         </IonRouterOutlet>
       </IonReactRouter>
     </IonApp>

@@ -29,7 +29,7 @@ import {
   pricetagOutline,
   trashOutline,
 } from 'ionicons/icons';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import type { Expense } from '../models/expense.model';
 import {
   deleteExpense,
@@ -46,7 +46,7 @@ addIcons({
 });
 
 export function ExpenseListPage(): JSX.Element {
-  const history = useHistory();
+  const navigate = useNavigate();
   const [expenses, setExpenses] = useState<Expense[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [selectedExpenseForDeletion, setSelectedExpenseForDeletion] =
@@ -118,7 +118,7 @@ export function ExpenseListPage(): JSX.Element {
   };
 
   const editExpense = (expenseId: number): void => {
-    history.push(`/expenses/${expenseId}/edit`);
+    navigate(`/expenses/${expenseId}/edit`);
   };
 
   const formatDate = (date: string): string => {
